@@ -1,0 +1,15 @@
+{
+  "name": "i-sweet-briar-fe",
+  "version": "1.0.0",
+  "description": "Front end for Sweet Briar online learning package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "i-sweet-briar-fe"
+  },
+  "author": "Biull Jones",
+  "license": "ISC"
+}
