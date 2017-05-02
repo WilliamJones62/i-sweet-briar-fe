@@ -27,7 +27,15 @@
         return store.get('token');
       }
 
-      function redirect($q, $injector, auth, store, $location) {
+
+
+      function redirect($q, $injector, $timeout, store, $location) {
+
+        var auth;
+        $timeout(function() {
+          auth = $injector.get('auth');
+        });
+
         return {
           responseError: function(rejection) {
 
@@ -59,8 +67,8 @@
             }
           }
         }
-        else {
-          // Otherwise, redirect to the home route
+
+        if (!auth.isAuthenticated) {
           $location.path('/home');
         }
       });

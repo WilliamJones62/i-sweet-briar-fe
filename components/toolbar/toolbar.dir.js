@@ -1,11 +1,11 @@
 (function() {
-
+  
   'use strict';
-
+  
   angular
-    .module('app')
+    .module('authApp')
     .directive('toolbar', toolbar);
-
+    
   function toolbar() {
     return {
       templateUrl: 'components/toolbar/toolbar.tpl.html',
@@ -13,13 +13,13 @@
       controllerAs: 'toolbar'
     }
   }
-
+    
   function toolbarController(auth, store, $location) {
     var vm = this;
     vm.login = login;
     vm.logout = logout;
     vm.auth = auth;
-
+    
     function login() {
       // The auth service has a signin method that
       // makes use of Auth0Lock. If authentication
@@ -28,12 +28,12 @@
       auth.signin({}, function(profile, token) {
         store.set('profile', profile);
         store.set('token', token);
-        $location.path('/');
+        $location.path('/home');
       }, function(error) {
         console.log(error);
       })
     }
-
+    
     function logout() {
       // The signout method on the auth service
       // sets isAuthenticated to false but we
@@ -42,8 +42,8 @@
       auth.signout();
       store.remove('profile');
       store.remove('token');
-      $location.path('/');
+      $location.path('/home');
     }
   }
-
+  
 })();
