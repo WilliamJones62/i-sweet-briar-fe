@@ -13,13 +13,6 @@
     </md-button>
 
     <md-button
-      ui-sref="profile"
-      ng-if="toolbar.auth.isAuthenticated"
-      aria-label="Profile">
-      Profile
-    </md-button>
-
-    <md-button
       aria-label="Logout"
       ng-if="toolbar.auth.isAuthenticated"
       ng-click="toolbar.logout()">

@@ -1,4 +1,12 @@
 <md-content>
   <h1>Welcome to the iSweet Briar app!</h1>
-  <h3>Login from the toolbar above to access your profile.</h3>
+
+  <div ng-show="!toolbar.auth.isAuthenticated">
+    <h3>Login from the toolbar above to access your profile.</h3>
+  </div>
+
+  <div ng-show="toolbar.auth.isAuthenticated">
+    <h3>Your current lesson.</h3>
+  </div>
+
 </md-content>
