@@ -6,7 +6,13 @@
   </div>
 
   <div ng-show="toolbar.auth.isAuthenticated">
-    <h3>Your current lesson.</h3>
+    <h3>Get your current lesson.</h3>.
+    <md-button
+      aria-label="Current Lesson"
+      ng-click="lesson.current()">
+      Login
+    </md-button>
+
   </div>
 
 </md-content>
